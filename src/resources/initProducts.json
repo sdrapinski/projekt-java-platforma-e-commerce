@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Laptop Lenovo",
+    "price": 2999.99,
+    "category": "ELECTRONICS",
+    "available": true,
+    "description": "Laptop z procesorem Intel i5 i 16GB RAM"
+  },
+  {
+    "name": "Czekolada mleczna",
+    "price": 5.49,
+    "category": "FOOD",
+    "available": true,
+    "description": "Słodka czekolada mleczna 100g"
+  },
+  {
+    "name": "Podstawy Java",
+    "price": 89.90,
+    "category": "BOOKS",
+    "available": false,
+    "description": "Podręcznik programowania w języku Java"
+  }
+]
