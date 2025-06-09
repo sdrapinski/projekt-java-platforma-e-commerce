@@ -3,6 +3,7 @@ package core;
 import classes.catalogs.Catalog;
 import classes.products.Category;
 import classes.products.Product;
+import classes.shoppingCart.Promotions;
 import classes.shoppingCart.ShoppingCart;
 
 import java.util.Scanner;
@@ -65,6 +66,19 @@ public class Console {
                 }
             }
             case "cart" -> shoppingCart.displayCartContents();
+            case "apply_promotion" -> {
+                Scanner scanner = new Scanner(System.in);
+                System.out.println("Wpisz odpowieni kod promocyjny");
+                String code = scanner.nextLine().trim().toUpperCase();
+
+                try{
+                    Promotions promo = Promotions.valueOf(code);
+                    shoppingCart.applyPromotions(promo);
+                }catch (IllegalArgumentException e){
+                    System.out.println("Niepoprawny kod promocyjny");
+                }
+
+            }
             case "show" -> {
                 if (parts.length == 2) {
                     showProductDetails(parts[1]);
@@ -85,6 +99,7 @@ public class Console {
         System.out.println("  add <ID>           - dodaj produkt do koszyka");
         System.out.println("  remove <ID>        - usuń produkt z koszyka");
         System.out.println("  cart               - pokaż zawartość koszyka");
+        System.out.println("  apply_promotion    - dodaj promocje");
         System.out.println("  exit               - zakończ program");
     }
 
