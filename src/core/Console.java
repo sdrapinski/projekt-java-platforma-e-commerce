@@ -8,6 +8,13 @@ import classes.shoppingCart.ShoppingCart;
 
 import java.util.Scanner;
 
+/*
+Szymon Drapiński,
+Maciej Adamski,
+Jakub Cegłowski,
+Dominik Ochej
+*/
+
 public class Console {
     private final Catalog catalog;
     private final ShoppingCart shoppingCart;
@@ -19,7 +26,7 @@ public class Console {
 
     public void Start() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Witaj w prostym programie konsolowym!");
+        System.out.println("E-commerce java project");
         showCommands();
 
         while (true) {
@@ -68,7 +75,11 @@ public class Console {
             case "cart" -> shoppingCart.displayCartContents();
             case "apply_promotion" -> {
                 Scanner scanner = new Scanner(System.in);
-                System.out.println("Wpisz odpowieni kod promocyjny");
+                System.out.println("Wpisz odpowieni kod promocyjny, oto lista dostepnych: (development only)");
+                System.out.println("TOOF - 10% taniej");
+                System.out.println("TWOPLUSONE - Trzeci najtanszy produkt za 1 zł");
+                System.out.println("NEXTHALFOF - Drugi taki sam za 50%");
+                System.out.println("NONE - brak promocji");
                 String code = scanner.nextLine().trim().toUpperCase();
 
                 try{
